@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/sections/Hero';
+import Skills from '../components/sections/Skills';
+import Experience from '../components/sections/Experience';
+import Projects from '../components/sections/Projects';
+import Contact from '../components/sections/Contact';
+import { GridBackground, GlowingStars } from '../components/ui/grid-background';
+---
+
+<Layout
+    title='Damien Dubernet | Développeur Full Stack - TypeScript, React, NestJS'
+    description='Développeur Full Stack basé au Mans, spécialisé en TypeScript, React, React Native et NestJS. Je crée des applications web et mobiles performantes et modernes.'
+>
+    <div class='fixed inset-0 -z-10 overflow-hidden' aria-hidden='true'>
+        <div
+            class='absolute inset-0 bg-[linear-gradient(to_right,rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]'
+        >
+        </div>
+        <div
+            class='absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.12),transparent)]'
+        >
+        </div>
+    </div>
+
+    <div class='fixed inset-0 -z-10 pointer-events-none' aria-hidden='true'>
+        <GridBackground client:idle />
+    </div>
+
+    <Navbar client:load />
+
+    <main class='relative'>
+        <Hero client:load />
+        <Skills client:visible />
+        <Experience client:visible />
+        <Projects client:visible />
+        <Contact client:visible />
+    </main>
+
+    <footer
+        class='relative border-t border-[var(--color-border)] bg-[var(--color-background)]/80 py-8 backdrop-blur-sm'
+    >
+        <div class='mx-auto max-w-6xl px-4'>
+            <div class='flex flex-col items-center justify-between gap-4 sm:flex-row'>
+                <div class='flex items-center gap-3'>
+                    <img src='/images/logo.svg' alt='DBRNET Logo' class='h-6 w-auto' />
+                    <span class='text-sm text-[var(--color-muted)]'>
+                        &copy; {new Date().getFullYear()} Damien Dubernet
+                    </span>
+                </div>
+                <nav class='flex items-center gap-6' aria-label='Liens sociaux'>
+                    <a
+                        href={import.meta.env.PUBLIC_LINKEDIN_URL}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        class='text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-primary)]'
+                        aria-label='LinkedIn de Damien Dubernet'
+                    >
+                        LinkedIn
+                    </a>
+                    <a
+                        href={import.meta.env.PUBLIC_GITHUB_URL}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        class='text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-primary)]'
+                        aria-label='GitHub de Damien Dubernet'
+                    >
+                        GitHub
+                    </a>
+                    <a
+                        href={`mailto:${import.meta.env.PUBLIC_EMAIL}`}
+                        class='text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-primary)]'
+                        aria-label='Envoyer un email à Damien Dubernet'
+                    >
+                        Email
+                    </a>
+                </nav>
+            </div>
+            <div class='mt-4 text-center'>
+                <p class='text-xs text-[var(--color-muted-foreground)]'>Conçu avec Astro, React & TailwindCSS</p>
+            </div>
+        </div>
+    </footer>
+</Layout>
