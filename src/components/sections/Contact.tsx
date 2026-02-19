@@ -135,7 +135,7 @@ export default function Contact() {
                   Discutons de votre projet et voyons comment je peux vous aider.
                 </p>
                 <a
-                  href="/contact"
+                  href={`mailto:${import.meta.env.PUBLIC_EMAIL}`}
                   className="group relative flex h-12 w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-[var(--color-primary)] px-8 font-medium text-white transition-all hover:bg-[var(--color-primary)]/90 hover:shadow-lg hover:shadow-[var(--color-primary)]/25"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />

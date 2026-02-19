@@ -173,7 +173,7 @@ export default function Projects() {
             Vous avez un projet en tête ? Discutons-en !
           </p>
           <a
-            href='/contact'
+            href={`mailto:${import.meta.env.PUBLIC_EMAIL}`}
             className='group inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-8 py-4 font-medium text-white transition-all hover:bg-[var(--color-primary)]/90 hover:shadow-lg hover:shadow-[var(--color-primary)]/25'
           >
             Démarrer un projet

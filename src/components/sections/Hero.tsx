@@ -99,7 +99,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap items-center justify-center gap-3"
           >
-            <MovingBorder as="a" href="/contact" duration={3000}>
+            <MovingBorder as="a" href={`mailto:${import.meta.env.PUBLIC_EMAIL}`} duration={3000}>
               <Mail className="mr-2 h-4 w-4" />
               Me contacter
             </MovingBorder>

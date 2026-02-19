@@ -69,7 +69,7 @@ export const FloatingNav = ({
         </a>
       ))}
       <a
-        href="/contact"
+        href={`mailto:${import.meta.env.PUBLIC_EMAIL}`}
         className="relative rounded-full border border-[var(--color-primary)]/50 bg-[var(--color-primary)]/10 px-4 py-2 text-sm font-medium text-[var(--color-primary)] transition-all hover:bg-[var(--color-primary)]/20 hover:shadow-lg hover:shadow-[var(--color-primary)]/20"
       >
         Contact
