@@ -10,6 +10,7 @@ interface TimelineEntry {
   location: string;
   description: string[];
   technologies?: string[];
+  logo?: string;
 }
 
 export const Timeline = ({
@@ -73,7 +74,16 @@ export const Timeline = ({
                 <h3 className="text-xl font-bold text-[var(--color-foreground)]">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-base text-[var(--color-primary)]">{item.company}</p>
+                <div className="mt-1 flex items-center gap-2">
+                  {item.logo && (
+                    <img
+                      src={item.logo}
+                      alt={`${item.company} logo`}
+                      className="h-6 w-6 rounded object-contain"
+                    />
+                  )}
+                  <p className="text-base text-[var(--color-primary)]">{item.company}</p>
+                </div>
 
                 <ul className="mt-4 space-y-2">
                   {item.description.map((desc, i) => (
