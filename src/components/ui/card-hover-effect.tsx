@@ -1,7 +1,7 @@
-"use client";
-import { cn } from "../../lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+'use client';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
+import { cn } from '../../lib/utils';
 
 export const HoverEffect = ({
   items,
@@ -18,14 +18,9 @@ export const HoverEffect = ({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-3",
-        className
-      )}
-    >
+    <div className={cn('grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-3', className)}>
       {items.map((item, idx) => {
-        const Wrapper = item.link ? "a" : "div";
+        const Wrapper = item.link ? 'a' : 'div';
         return (
           <Wrapper
             href={item.link}
@@ -79,8 +74,8 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "relative z-20 h-full w-full overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-colors group-hover:border-[var(--color-primary)]/50",
-        className
+        'relative z-20 h-full w-full overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-colors group-hover:border-[var(--color-primary)]/50',
+        className,
       )}
     >
       <div className="relative z-50">{children}</div>
@@ -96,12 +91,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4
-      className={cn(
-        "font-semibold tracking-wide text-[var(--color-foreground)]",
-        className
-      )}
-    >
+    <h4 className={cn('font-semibold tracking-wide text-[var(--color-foreground)]', className)}>
       {children}
     </h4>
   );
@@ -115,12 +105,7 @@ export const CardDescription = ({
   children: React.ReactNode;
 }) => {
   return (
-    <p
-      className={cn(
-        "mt-4 text-sm leading-relaxed text-[var(--color-muted)]",
-        className
-      )}
-    >
+    <p className={cn('mt-4 text-sm leading-relaxed text-[var(--color-muted)]', className)}>
       {children}
     </p>
   );

@@ -1,7 +1,8 @@
-"use client";
-import React, { useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { cn } from "../../lib/utils";
+'use client';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import type React from 'react';
+import { useState } from 'react';
+import { cn } from '../../lib/utils';
 
 export const FloatingNav = ({
   navItems,
@@ -17,8 +18,8 @@ export const FloatingNav = ({
   const { scrollYProgress } = useScroll();
   const [scrolled, setScrolled] = useState(false);
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
+  useMotionValueEvent(scrollYProgress, 'change', (current) => {
+    if (typeof current === 'number') {
       setScrolled(current > 0.02);
     }
   });
@@ -35,17 +36,17 @@ export const FloatingNav = ({
       }}
       transition={{
         duration: 0.4,
-        ease: "easeOut",
+        ease: 'easeOut',
       }}
       className={cn(
-        "fixed inset-x-0 top-0 z-[5000] mx-auto flex max-w-fit items-center justify-center space-x-4 rounded-full border px-8 py-4 transition-all duration-300",
+        'fixed inset-x-0 top-0 z-[5000] mx-auto flex max-w-fit items-center justify-center space-x-4 rounded-full border px-8 py-4 transition-all duration-300',
         scrolled
-          ? "border-[var(--color-border)]/50 bg-[var(--color-background)]/80 shadow-lg shadow-black/10 backdrop-blur-lg"
-          : "border-transparent bg-transparent shadow-none",
-        className
+          ? 'border-[var(--color-border)]/50 bg-[var(--color-background)]/80 shadow-lg shadow-black/10 backdrop-blur-lg'
+          : 'border-transparent bg-transparent shadow-none',
+        className,
       )}
       style={{
-        top: "1.5rem",
+        top: '1.5rem',
       }}
     >
       <a
@@ -53,18 +54,14 @@ export const FloatingNav = ({
         className="mr-4 flex items-center transition-opacity hover:opacity-80"
         aria-label="Accueil"
       >
-        <img
-          src="/images/logo.svg"
-          alt="DBRNET Logo"
-          className="h-8 w-auto"
-        />
+        <img src="/images/logo.svg" alt="DBRNET Logo" className="h-8 w-auto" />
       </a>
-      {navItems.map((navItem, idx) => (
+      {navItems.map((navItem) => (
         <a
-          key={`link-${idx}`}
+          key={navItem.name}
           href={navItem.link}
           className={cn(
-            "relative flex items-center space-x-1 text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-foreground)]"
+            'relative flex items-center space-x-1 text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-foreground)]',
           )}
         >
           <span className="hidden sm:block">{navItem.icon}</span>

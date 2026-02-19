@@ -1,7 +1,7 @@
-"use client";
-import React, { useId, useMemo } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { cn } from "../../lib/utils";
+'use client';
+import { motion } from 'framer-motion';
+import { useMemo } from 'react';
+import { cn } from '../../lib/utils';
 
 type SparklesCoreProps = {
   id?: string;
@@ -15,18 +15,14 @@ type SparklesCoreProps = {
 };
 
 export const SparklesCore = ({
-  id,
   className,
   background,
   minSize = 0.4,
   maxSize = 1,
   particleDensity = 100,
-  particleColor = "#FFF",
+  particleColor = '#FFF',
   speed = 1,
 }: SparklesCoreProps) => {
-  const generatedId = useId();
-  const controls = useAnimation();
-
   const particles = useMemo(() => {
     return Array.from({ length: particleDensity }, (_, i) => ({
       id: i,
@@ -39,17 +35,8 @@ export const SparklesCore = ({
   }, [particleDensity, minSize, maxSize, speed]);
 
   return (
-    <div
-      className={cn(
-        "h-full w-full",
-        className
-      )}
-      style={{ background }}
-    >
-      <svg
-        className="h-full w-full"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+    <div className={cn('h-full w-full', className)} style={{ background }}>
+      <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         {particles.map((particle) => (
           <motion.circle
             key={particle.id}
@@ -66,7 +53,7 @@ export const SparklesCore = ({
               duration: particle.duration,
               repeat: Infinity,
               delay: particle.delay,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           />
         ))}

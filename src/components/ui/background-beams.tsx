@@ -1,32 +1,32 @@
-"use client";
-import { cn } from "../../lib/utils";
-import React from "react";
+'use client';
+import type React from 'react';
+import { cn } from '../../lib/utils';
 
 export const BackgroundBeams = ({ className }: { className?: string }) => {
   const paths = [
-    "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
-    "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
-    "M-366 -205C-366 -205 -298 200 166 327C630 454 698 859 698 859",
-    "M-359 -213C-359 -213 -291 192 173 319C637 446 705 851 705 851",
-    "M-352 -221C-352 -221 -284 184 180 311C644 438 712 843 712 843",
-    "M-345 -229C-345 -229 -277 176 187 303C651 430 719 835 719 835",
-    "M-338 -237C-338 -237 -270 168 194 295C658 422 726 827 726 827",
-    "M-331 -245C-331 -245 -263 160 201 287C665 414 733 819 733 819",
-    "M-324 -253C-324 -253 -256 152 208 279C672 406 740 811 740 811",
-    "M-317 -261C-317 -261 -249 144 215 271C679 398 747 803 747 803",
-    "M-310 -269C-310 -269 -242 136 222 263C686 390 754 795 754 795",
-    "M-303 -277C-303 -277 -235 128 229 255C693 382 761 787 761 787",
-    "M-296 -285C-296 -285 -228 120 236 247C700 374 768 779 768 779",
-    "M-289 -293C-289 -293 -221 112 243 239C707 366 775 771 775 771",
-    "M-282 -301C-282 -301 -214 104 250 231C714 358 782 763 782 763",
-    "M-275 -309C-275 -309 -207 96 257 223C721 350 789 755 789 755",
-    "M-268 -317C-268 -317 -200 88 264 215C728 342 796 747 796 747",
+    'M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875',
+    'M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867',
+    'M-366 -205C-366 -205 -298 200 166 327C630 454 698 859 698 859',
+    'M-359 -213C-359 -213 -291 192 173 319C637 446 705 851 705 851',
+    'M-352 -221C-352 -221 -284 184 180 311C644 438 712 843 712 843',
+    'M-345 -229C-345 -229 -277 176 187 303C651 430 719 835 719 835',
+    'M-338 -237C-338 -237 -270 168 194 295C658 422 726 827 726 827',
+    'M-331 -245C-331 -245 -263 160 201 287C665 414 733 819 733 819',
+    'M-324 -253C-324 -253 -256 152 208 279C672 406 740 811 740 811',
+    'M-317 -261C-317 -261 -249 144 215 271C679 398 747 803 747 803',
+    'M-310 -269C-310 -269 -242 136 222 263C686 390 754 795 754 795',
+    'M-303 -277C-303 -277 -235 128 229 255C693 382 761 787 761 787',
+    'M-296 -285C-296 -285 -228 120 236 247C700 374 768 779 768 779',
+    'M-289 -293C-289 -293 -221 112 243 239C707 366 775 771 775 771',
+    'M-282 -301C-282 -301 -214 104 250 231C714 358 782 763 782 763',
+    'M-275 -309C-275 -309 -207 96 257 223C721 350 789 755 789 755',
+    'M-268 -317C-268 -317 -200 88 264 215C728 342 796 747 796 747',
   ];
   return (
     <div
       className={cn(
-        "absolute inset-0 flex h-full w-full items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]",
-        className
+        'absolute inset-0 flex h-full w-full items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]',
+        className,
       )}
     >
       <svg
@@ -34,6 +34,7 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="100%"
+        aria-hidden="true"
       >
         <defs>
           <linearGradient id="beam-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -44,7 +45,7 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
         </defs>
         {paths.map((path, index) => (
           <path
-            key={`path-${index}`}
+            key={path}
             d={path}
             stroke="url(#beam-gradient)"
             strokeWidth="0.5"
@@ -53,7 +54,7 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
             className="animate-pulse"
             style={{
               animationDelay: `${index * 0.1}s`,
-              animationDuration: "3s",
+              animationDuration: '3s',
             }}
           />
         ))}
@@ -66,36 +67,26 @@ export const BackgroundGradient = ({
   children,
   className,
   containerClassName,
-  animate = true,
 }: {
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
-  animate?: boolean;
 }) => {
-  const variants = {
-    initial: {
-      backgroundPosition: "0 50%",
-    },
-    animate: {
-      backgroundPosition: ["0 50%", "100% 50%", "0 50%"],
-    },
-  };
   return (
-    <div className={cn("group relative p-[4px]", containerClassName)}>
+    <div className={cn('group relative p-[4px]', containerClassName)}>
       <div
         className={cn(
-          "absolute inset-0 rounded-3xl opacity-60 blur-xl transition duration-500 group-hover:opacity-100",
-          "bg-[radial-gradient(circle_farthest-side_at_0_100%,#3b82f6,transparent),radial-gradient(circle_farthest-side_at_100%_0,#8b5cf6,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ec4899,transparent),radial-gradient(circle_farthest-side_at_0_0,#3b82f6,#141316)]"
+          'absolute inset-0 rounded-3xl opacity-60 blur-xl transition duration-500 group-hover:opacity-100',
+          'bg-[radial-gradient(circle_farthest-side_at_0_100%,#3b82f6,transparent),radial-gradient(circle_farthest-side_at_100%_0,#8b5cf6,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ec4899,transparent),radial-gradient(circle_farthest-side_at_0_0,#3b82f6,#141316)]',
         )}
       />
       <div
         className={cn(
-          "absolute inset-0 rounded-3xl",
-          "bg-[radial-gradient(circle_farthest-side_at_0_100%,#3b82f6,transparent),radial-gradient(circle_farthest-side_at_100%_0,#8b5cf6,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ec4899,transparent),radial-gradient(circle_farthest-side_at_0_0,#3b82f6,#141316)]"
+          'absolute inset-0 rounded-3xl',
+          'bg-[radial-gradient(circle_farthest-side_at_0_100%,#3b82f6,transparent),radial-gradient(circle_farthest-side_at_100%_0,#8b5cf6,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ec4899,transparent),radial-gradient(circle_farthest-side_at_0_0,#3b82f6,#141316)]',
         )}
       />
-      <div className={cn("relative", className)}>{children}</div>
+      <div className={cn('relative', className)}>{children}</div>
     </div>
   );
 };

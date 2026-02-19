@@ -125,8 +125,9 @@
 
   .gradient-border {
     position: relative;
-    background: linear-gradient(var(--color-card), var(--color-card)) padding-box,
-                linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899) border-box;
+    background:
+      linear-gradient(var(--color-card), var(--color-card)) padding-box,
+      linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899) border-box;
     border: 1px solid transparent;
   }
 
@@ -177,7 +178,9 @@
   }
 
   .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .hover-lift:hover {

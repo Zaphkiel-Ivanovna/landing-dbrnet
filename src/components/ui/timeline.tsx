@@ -1,7 +1,7 @@
-"use client";
-import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
-import { cn } from "../../lib/utils";
+'use client';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { cn } from '../../lib/utils';
 
 interface TimelineEntry {
   title: string;
@@ -13,13 +13,7 @@ interface TimelineEntry {
   logo?: string;
 }
 
-export const Timeline = ({
-  data,
-  className,
-}: {
-  data: TimelineEntry[];
-  className?: string;
-}) => {
+export const Timeline = ({ data, className }: { data: TimelineEntry[]; className?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -29,21 +23,21 @@ export const Timeline = ({
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
     }
-  }, [ref]);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    offset: ['start 10%', 'end 50%'],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className={cn("w-full font-sans", className)} ref={containerRef}>
+    <div className={cn('w-full font-sans', className)} ref={containerRef}>
       <div ref={ref} className="relative mx-auto max-w-4xl pb-8">
         {data.map((item, index) => (
-          <div key={index} className="flex justify-start pt-8 md:gap-10 md:pt-16">
+          <div key={item.company} className="flex justify-start pt-8 md:gap-10 md:pt-16">
             <div className="sticky top-40 z-40 hidden flex-col items-center self-start md:flex">
               <div className="absolute left-3 h-10 w-10 rounded-full bg-[var(--color-background)] flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full border border-[var(--color-border)] bg-[var(--color-primary)]/20" />
@@ -71,9 +65,7 @@ export const Timeline = ({
                   <span className="text-xs text-[var(--color-muted)]">{item.location}</span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[var(--color-foreground)]">
-                  {item.title}
-                </h3>
+                <h3 className="text-xl font-bold text-[var(--color-foreground)]">{item.title}</h3>
                 <div className="mt-1 flex items-center gap-2">
                   {item.logo && (
                     <img
@@ -86,8 +78,11 @@ export const Timeline = ({
                 </div>
 
                 <ul className="mt-4 space-y-2">
-                  {item.description.map((desc, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[var(--color-muted)]">
+                  {item.description.map((desc) => (
+                    <li
+                      key={desc}
+                      className="flex items-start gap-2 text-sm text-[var(--color-muted)]"
+                    >
                       <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-primary)]" />
                       {desc}
                     </li>
@@ -96,9 +91,9 @@ export const Timeline = ({
 
                 {item.technologies && (
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {item.technologies.map((tech, i) => (
+                    {item.technologies.map((tech) => (
                       <span
-                        key={i}
+                        key={tech}
                         className="rounded-full border border-[var(--color-border)] bg-[var(--color-card-hover)] px-2 py-1 text-xs text-[var(--color-muted)]"
                       >
                         {tech}
@@ -111,7 +106,7 @@ export const Timeline = ({
           </div>
         ))}
         <div
-          style={{ height: height + "px" }}
+          style={{ height: `${height}px` }}
           className="absolute left-8 top-0 w-[2px] overflow-hidden bg-gradient-to-b from-transparent via-[var(--color-border)] to-transparent md:left-8"
         >
           <motion.div

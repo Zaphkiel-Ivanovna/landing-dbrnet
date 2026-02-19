@@ -1,22 +1,12 @@
 'use client';
-import React from 'react';
 import { motion } from 'framer-motion';
+import { Cloud, Code2, Database, Server, Smartphone, Terminal } from 'lucide-react';
 import { SpotlightCard } from '../ui/spotlight';
-import {
-  Code2,
-  Server,
-  Database,
-  Smartphone,
-  Cloud,
-  GitBranch,
-  Terminal,
-  Palette,
-} from 'lucide-react';
 
 const skillCategories = [
   {
     title: 'Frontend',
-    icon: <Code2 className='h-6 w-6' />,
+    icon: <Code2 className="h-6 w-6" />,
     skills: [
       { name: 'TypeScript', level: 95 },
       { name: 'React.js', level: 95 },
@@ -28,7 +18,7 @@ const skillCategories = [
   },
   {
     title: 'Mobile',
-    icon: <Smartphone className='h-6 w-6' />,
+    icon: <Smartphone className="h-6 w-6" />,
     skills: [
       { name: 'React Native', level: 90 },
       { name: 'Expo', level: 85 },
@@ -38,7 +28,7 @@ const skillCategories = [
   },
   {
     title: 'Backend',
-    icon: <Server className='h-6 w-6' />,
+    icon: <Server className="h-6 w-6" />,
     skills: [
       { name: 'NestJS', level: 90 },
       { name: 'Node.js', level: 90 },
@@ -49,7 +39,7 @@ const skillCategories = [
   },
   {
     title: 'Base de données',
-    icon: <Database className='h-6 w-6' />,
+    icon: <Database className="h-6 w-6" />,
     skills: [
       { name: 'PostgreSQL', level: 85 },
       { name: 'MongoDB', level: 80 },
@@ -60,7 +50,7 @@ const skillCategories = [
   },
   {
     title: 'DevOps & Cloud',
-    icon: <Cloud className='h-6 w-6' />,
+    icon: <Cloud className="h-6 w-6" />,
     skills: [
       { name: 'Docker', level: 80 },
       { name: 'CI/CD', level: 75 },
@@ -71,7 +61,7 @@ const skillCategories = [
   },
   {
     title: 'Outils',
-    icon: <Terminal className='h-6 w-6' />,
+    icon: <Terminal className="h-6 w-6" />,
     skills: [
       { name: 'Git', level: 90 },
       { name: 'VS Code/Zed', level: 95 },
@@ -119,21 +109,21 @@ const techLogos = [
 
 export default function Skills() {
   return (
-    <section id='skills' className='relative py-24 px-4'>
-      <div className='mx-auto max-w-6xl'>
+    <section id="skills" className="relative py-24 px-4">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='mb-16 text-center'
+          className="mb-16 text-center"
         >
-          <h2 className='mb-4 text-3xl font-bold sm:text-4xl'>
-            <span className='gradient-text'>Compétences</span> Techniques
+          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+            <span className="gradient-text">Compétences</span> Techniques
           </h2>
-          <p className='mx-auto max-w-2xl text-[var(--color-muted)]'>
-            Un ensemble de technologies modernes maîtrisées pour créer des
-            applications performantes et scalables.
+          <p className="mx-auto max-w-2xl text-[var(--color-muted)]">
+            Un ensemble de technologies modernes maîtrisées pour créer des applications performantes
+            et scalables.
           </p>
         </motion.div>
 
@@ -142,16 +132,16 @@ export default function Skills() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className='mb-16 overflow-hidden'
+          className="mb-16 overflow-hidden"
         >
-          <div className='flex gap-8 animate-scroll'>
+          <div className="flex gap-8 animate-scroll">
             {[...techLogos, ...techLogos].map((tech, index) => (
               <div
-                key={index}
-                className='flex flex-shrink-0 items-center gap-3 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-6 py-3'
+                key={`${tech.name}-${index}`}
+                className="flex flex-shrink-0 items-center gap-3 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-6 py-3"
               >
-                <img src={tech.icon} alt={tech.name} className='h-6 w-6' />
-                <span className='text-sm font-medium text-[var(--color-foreground)]'>
+                <img src={tech.icon} alt={tech.name} className="h-6 w-6" />
+                <span className="text-sm font-medium text-[var(--color-foreground)]">
                   {tech.name}
                 </span>
               </div>
@@ -159,7 +149,7 @@ export default function Skills() {
           </div>
         </motion.div>
 
-        <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -168,31 +158,29 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             >
-              <SpotlightCard className='h-full'>
-                <div className='relative z-10'>
-                  <div className='mb-6 flex items-center gap-3'>
+              <SpotlightCard className="h-full">
+                <div className="relative z-10">
+                  <div className="mb-6 flex items-center gap-3">
                     <div
                       className={`rounded-xl bg-gradient-to-br ${category.color} p-3 text-white`}
                     >
                       {category.icon}
                     </div>
-                    <h3 className='text-xl font-bold text-[var(--color-foreground)]'>
+                    <h3 className="text-xl font-bold text-[var(--color-foreground)]">
                       {category.title}
                     </h3>
                   </div>
 
-                  <div className='space-y-4'>
+                  <div className="space-y-4">
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skill.name}>
-                        <div className='mb-2 flex items-center justify-between'>
-                          <span className='text-sm font-medium text-[var(--color-foreground)]'>
+                        <div className="mb-2 flex items-center justify-between">
+                          <span className="text-sm font-medium text-[var(--color-foreground)]">
                             {skill.name}
                           </span>
-                          <span className='text-xs text-[var(--color-muted)]'>
-                            {skill.level}%
-                          </span>
+                          <span className="text-xs text-[var(--color-muted)]">{skill.level}%</span>
                         </div>
-                        <div className='h-2 overflow-hidden rounded-full bg-[var(--color-border)]'>
+                        <div className="h-2 overflow-hidden rounded-full bg-[var(--color-border)]">
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${skill.level}%` }}

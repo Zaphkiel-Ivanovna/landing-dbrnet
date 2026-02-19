@@ -1,8 +1,7 @@
 'use client';
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Timeline } from '../ui/timeline';
 import { Briefcase, GraduationCap } from 'lucide-react';
+import { Timeline } from '../ui/timeline';
 
 const experiences = [
   {
@@ -105,21 +104,21 @@ const education = [
 
 export default function Experience() {
   return (
-    <section id='experience' className='relative py-24 px-4'>
-      <div className='mx-auto max-w-6xl'>
+    <section id="experience" className="relative py-24 px-4">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='mb-12 text-center'
+          className="mb-12 text-center"
         >
-          <h2 className='mb-4 text-3xl font-bold sm:text-4xl'>
-            Mon <span className='gradient-text'>Parcours</span>
+          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+            Mon <span className="gradient-text">Parcours</span>
           </h2>
-          <p className='mx-auto max-w-2xl text-[var(--color-muted)]'>
-            Une évolution constante de la maintenance informatique vers le
-            développement full stack moderne.
+          <p className="mx-auto max-w-2xl text-[var(--color-muted)]">
+            Une évolution constante de la maintenance informatique vers le développement full stack
+            moderne.
           </p>
         </motion.div>
 
@@ -128,13 +127,13 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='mb-12'
+          className="mb-12"
         >
-          <div className='mb-6 flex items-center gap-3'>
-            <div className='rounded-xl bg-[var(--color-primary)]/20 p-3'>
-              <Briefcase className='h-6 w-6 text-[var(--color-primary)]' />
+          <div className="mb-6 flex items-center gap-3">
+            <div className="rounded-xl bg-[var(--color-primary)]/20 p-3">
+              <Briefcase className="h-6 w-6 text-[var(--color-primary)]" />
             </div>
-            <h3 className='text-2xl font-bold text-[var(--color-foreground)]'>
+            <h3 className="text-2xl font-bold text-[var(--color-foreground)]">
               Expériences Professionnelles
             </h3>
           </div>
@@ -147,13 +146,11 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className='mb-6 flex items-center gap-3'>
-            <div className='rounded-xl bg-[var(--color-accent)]/20 p-3'>
-              <GraduationCap className='h-6 w-6 text-[var(--color-accent)]' />
+          <div className="mb-6 flex items-center gap-3">
+            <div className="rounded-xl bg-[var(--color-accent)]/20 p-3">
+              <GraduationCap className="h-6 w-6 text-[var(--color-accent)]" />
             </div>
-            <h3 className='text-2xl font-bold text-[var(--color-foreground)]'>
-              Formation
-            </h3>
+            <h3 className="text-2xl font-bold text-[var(--color-foreground)]">Formation</h3>
           </div>
           <Timeline data={education} />
         </motion.div>

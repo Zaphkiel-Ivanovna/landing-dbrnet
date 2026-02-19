@@ -1,24 +1,24 @@
-"use client";
-import React from "react";
+'use client';
 import {
   motion,
   useAnimationFrame,
   useMotionTemplate,
   useMotionValue,
   useTransform,
-} from "framer-motion";
-import { useRef } from "react";
-import { cn } from "../../lib/utils";
+} from 'framer-motion';
+import type React from 'react';
+import { useRef } from 'react';
+import { cn } from '../../lib/utils';
 
 export function MovingBorder({
   children,
   duration = 2000,
-  rx = "9999px",
-  ry = "9999px",
+  rx = '9999px',
+  ry = '9999px',
   className,
   containerClassName,
   borderClassName,
-  as: Component = "button",
+  as: Component = 'button',
   ...otherProps
 }: {
   children: React.ReactNode;
@@ -34,8 +34,8 @@ export function MovingBorder({
   return (
     <Component
       className={cn(
-        "relative h-12 w-auto overflow-hidden rounded-full bg-transparent p-[2px] text-sm",
-        containerClassName
+        'relative h-12 w-auto overflow-hidden rounded-full bg-transparent p-[2px] text-sm',
+        containerClassName,
       )}
       {...otherProps}
     >
@@ -43,8 +43,8 @@ export function MovingBorder({
         <MovingBorderGradient duration={duration} rx={rx} ry={ry}>
           <div
             className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#3b82f6_40%,transparent_60%)]",
-              borderClassName
+              'h-20 w-20 opacity-[0.8] bg-[radial-gradient(#3b82f6_40%,transparent_60%)]',
+              borderClassName,
             )}
           />
         </MovingBorderGradient>
@@ -52,8 +52,8 @@ export function MovingBorder({
 
       <div
         className={cn(
-          "relative flex h-full w-full items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-6 text-sm font-medium antialiased backdrop-blur-xl",
-          className
+          'relative flex h-full w-full items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-6 text-sm font-medium antialiased backdrop-blur-xl',
+          className,
         )}
       >
         {children}
@@ -84,14 +84,8 @@ export const MovingBorderGradient = ({
     }
   });
 
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x ?? 0
-  );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y ?? 0
-  );
+  const x = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).x ?? 0);
+  const y = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).y ?? 0);
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
@@ -103,22 +97,16 @@ export const MovingBorderGradient = ({
         className="absolute h-full w-full"
         width="100%"
         height="100%"
+        aria-hidden="true"
       >
-        <rect
-          fill="none"
-          width="100%"
-          height="100%"
-          rx={rx}
-          ry={ry}
-          ref={pathRef}
-        />
+        <rect fill="none" width="100%" height="100%" rx={rx} ry={ry} ref={pathRef} />
       </svg>
       <motion.div
         style={{
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           left: 0,
-          display: "inline-block",
+          display: 'inline-block',
           transform,
         }}
       >
