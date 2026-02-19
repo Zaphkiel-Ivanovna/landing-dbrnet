@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
 
   <Navbar client:load />
 
-  <main class='relative'>
+  <main id='main-content' class='relative'>
     <Hero client:load />
     <Skills client:visible />
     <Experience client:visible />
@@ -44,7 +44,7 @@ import Layout from '../layouts/Layout.astro';
     <div class='mx-auto max-w-6xl px-4'>
       <div class='flex flex-col items-center justify-between gap-4 sm:flex-row'>
         <div class='flex items-center gap-3'>
-          <img src='/images/logo.svg' alt='DBRNET Logo' class='h-6 w-auto' />
+          <img src='/images/logo.svg' alt='DBRNET Logo' class='h-6 w-auto' width='24' height='24' />
           <span class='text-sm text-[var(--color-muted)]'>
             &copy; {new Date().getFullYear()} Damien Dubernet
           </span>

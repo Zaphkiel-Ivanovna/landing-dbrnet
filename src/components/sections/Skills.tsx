@@ -140,7 +140,7 @@ export default function Skills() {
                 key={`${tech.name}-${index}`}
                 className="flex flex-shrink-0 items-center gap-3 rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-6 py-3"
               >
-                <img src={tech.icon} alt={tech.name} className="h-6 w-6" />
+                <img src={tech.icon} alt={tech.name} className="h-6 w-6" width="24" height="24" loading="lazy" />
                 <span className="text-sm font-medium text-[var(--color-foreground)]">
                   {tech.name}
                 </span>
@@ -180,7 +180,14 @@ export default function Skills() {
                           </span>
                           <span className="text-xs text-[var(--color-muted)]">{skill.level}%</span>
                         </div>
-                        <div className="h-2 overflow-hidden rounded-full bg-[var(--color-border)]">
+                        <div
+                          className="h-2 overflow-hidden rounded-full bg-[var(--color-border)]"
+                          role="progressbar"
+                          aria-valuenow={skill.level}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                          aria-label={`${skill.name} : ${skill.level}%`}
+                        >
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${skill.level}%` }}

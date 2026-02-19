@@ -72,6 +72,9 @@ export const Timeline = ({ data, className }: { data: TimelineEntry[]; className
                       src={item.logo}
                       alt={`${item.company} logo`}
                       className="h-6 w-6 rounded object-contain"
+                      width="24"
+                      height="24"
+                      loading="lazy"
                     />
                   )}
                   <p className="text-base text-[var(--color-primary)]">{item.company}</p>

@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
 >
     <Navbar client:load />
 
-    <main class='relative min-h-screen pt-32 pb-20 px-4'>
+    <main id='main-content' class='relative min-h-screen pt-32 pb-20 px-4'>
         <div class='absolute inset-0 overflow-hidden'>
             <BackgroundBeams client:load className='opacity-30' />
         </div>
@@ -37,7 +37,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class='lg:col-span-2'>
                     <div class='space-y-6'>
                         <div class='rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6'>
-                            <h3 class='mb-4 text-lg font-bold text-[var(--color-foreground)]'>Contact Direct</h3>
+                            <h2 class='mb-4 text-lg font-bold text-[var(--color-foreground)]'>Contact Direct</h2>
                             <div class='space-y-4'>
                                 <a
                                     href={`mailto:${import.meta.env.PUBLIC_EMAIL}`}
@@ -86,7 +86,7 @@ import Layout from '../layouts/Layout.astro';
                         </div>
 
                         <div class='rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6'>
-                            <h3 class='mb-4 text-lg font-bold text-[var(--color-foreground)]'>Localisation</h3>
+                            <h2 class='mb-4 text-lg font-bold text-[var(--color-foreground)]'>Localisation</h2>
                             <div class='flex items-start gap-3'>
                                 <div class='rounded-lg bg-[var(--color-accent)]/10 p-2'>
                                     <svg
@@ -180,7 +180,7 @@ import Layout from '../layouts/Layout.astro';
         <div class='mx-auto max-w-6xl px-4'>
             <div class='flex flex-col items-center justify-between gap-4 sm:flex-row'>
                 <div class='flex items-center gap-3'>
-                    <img src='/images/logo.svg' alt='DBRNET Logo' class='h-6 w-auto' />
+                    <img src='/images/logo.svg' alt='DBRNET Logo' class='h-6 w-auto' width='24' height='24' />
                     <span class='text-sm text-[var(--color-muted)]'>
                         &copy; {new Date().getFullYear()} Damien Dubernet
                     </span>

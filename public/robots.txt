@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dbrnet.fr/sitemap.xml
+Sitemap: https://dbrnet.fr/sitemap-index.xml

@@ -153,6 +153,16 @@
     animation: scroll 20s linear infinite;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll,
+    .animate-shimmer,
+    .animate-pulse-glow,
+    .animate-float,
+    .animate-gradient {
+      animation: none;
+    }
+  }
+
   .animate-shimmer {
     animation: shimmer 2s linear infinite;
     background: linear-gradient(
