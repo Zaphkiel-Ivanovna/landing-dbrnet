@@ -1,141 +1,162 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Code2, ExternalLink, Globe, Rocket, ShoppingCart, Smartphone, Users } from 'lucide-react';
-import type React from 'react';
+import {
+  Code2,
+  Download,
+  ExternalLink,
+  Github,
+  Glasses,
+  Globe,
+  Monitor,
+  ShieldCheck,
+  Smartphone,
+} from 'lucide-react';
 import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
 
 const projects = [
   {
-    title: 'Application E-commerce',
+    title: 'ADB Studio',
     description:
-      'Plateforme e-commerce complète avec gestion des commandes, paiements Stripe et dashboard admin.',
-    icon: <ShoppingCart className="h-5 w-5" />,
-    className: 'md:col-span-2',
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'Prisma', 'PostgreSQL'],
-    image: '/images/projects/ecommerce.png',
-    color: 'from-blue-500/20 to-cyan-500/20',
-  },
-  {
-    title: 'App Mobile React Native',
-    description:
-      'Application mobile cross-platform pour la gestion de tâches avec synchronisation cloud.',
-    icon: <Smartphone className="h-5 w-5" />,
+      "Une app macOS native pour gérer vos appareils Android sans toucher au terminal. Connexion USB ou WiFi, installation d'APK en drag & drop, screenshots en un clic.",
+    icon: <Smartphone className='h-5 w-5' />,
     className: 'md:col-span-1',
-    technologies: ['React Native', 'Expo', 'TypeScript', 'Firebase'],
-    image: '/images/projects/mobile.png',
-    color: 'from-purple-500/20 to-pink-500/20',
+    technologies: ['Swift', 'SwiftUI', 'ADB', 'mDNS'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Zaphkiel-Ivanovna/adb-studio',
+        icon: <Github className='h-3.5 w-3.5' />,
+      },
+    ],
   },
   {
-    title: 'Plateforme SaaS',
+    title: 'Google Auth Extractor',
     description:
-      'Solution SaaS de gestion pour les restaurants avec tableau de bord analytique en temps réel.',
-    icon: <Users className="h-5 w-5" />,
-    className: 'md:col-span-1',
-    technologies: ['React', 'NestJS', 'PostgreSQL', 'Docker'],
-    image: '/images/projects/saas.png',
-    color: 'from-green-500/20 to-emerald-500/20',
-  },
-  {
-    title: 'Site Vitrine Moderne',
-    description:
-      'Sites web performants et optimisés SEO avec animations fluides et design responsive.',
-    icon: <Globe className="h-5 w-5" />,
+      "Marre de Google Authenticator ? Cet outil extrait vos codes 2FA depuis un QR code d'export et les convertit pour Bitwarden, Authy, 1Password ou KeePass. Tout se passe en local.",
+    icon: <ShieldCheck className='h-5 w-5' />,
     className: 'md:col-span-2',
+    technologies: ['Go', 'Protobuf', 'Docker', 'CI/CD'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Zaphkiel-Ivanovna/GoogleAuthExtractor',
+        icon: <Github className='h-3.5 w-3.5' />,
+      },
+    ],
+  },
+  {
+    title: 'GitComAI',
+    description:
+      "Extension VS Code qui analyse vos changements Git et génère des messages de commit propres avec l'IA. Compatible Claude, OpenAI, Mistral et Ollama.",
+    icon: <Code2 className='h-5 w-5' />,
+    className: 'md:col-span-2',
+    technologies: ['TypeScript', 'VS Code API', 'Anthropic', 'OpenAI'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Zaphkiel-Ivanovna/git-com-ai',
+        icon: <Github className='h-3.5 w-3.5' />,
+      },
+    ],
+  },
+  {
+    title: 'Mon Portfolio',
+    description:
+      'Le site que vous visitez en ce moment. Un portfolio moderne avec des animations soignées, pensé pour être rapide et accessible.',
+    icon: <Globe className='h-5 w-5' />,
+    className: 'md:col-span-1',
     technologies: ['Astro', 'React', 'TailwindCSS', 'Framer Motion'],
-    image: '/images/projects/website.png',
-    color: 'from-orange-500/20 to-yellow-500/20',
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Zaphkiel-Ivanovna/landing-dbrnet',
+        icon: <Github className='h-3.5 w-3.5' />,
+      },
+      {
+        label: 'Site',
+        href: 'https://dbrnet.fr',
+        icon: <ExternalLink className='h-3.5 w-3.5' />,
+      },
+    ],
   },
   {
-    title: 'API REST & Microservices',
+    title: 'MediaDL',
     description:
-      'Architecture backend scalable avec authentification JWT, rate limiting et documentation Swagger.',
-    icon: <Code2 className="h-5 w-5" />,
+      'Un téléchargeur de médias qui tourne entièrement dans votre navigateur. YouTube, SoundCloud, conversion avec FFmpeg — aucune donnée ne quitte votre machine.',
+    icon: <Download className='h-5 w-5' />,
     className: 'md:col-span-1',
-    technologies: ['NestJS', 'TypeScript', 'PostgreSQL', 'Redis'],
-    image: '/images/projects/api.png',
-    color: 'from-indigo-500/20 to-violet-500/20',
+    technologies: ['Next.js', 'TypeScript', 'FFmpeg', 'ytdl-core'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Zaphkiel-Ivanovna/mediadl',
+        icon: <Github className='h-3.5 w-3.5' />,
+      },
+    ],
   },
   {
-    title: 'MVP Startup',
+    title: 'Lighthouse Guard',
     description:
-      'Développement rapide de MVP pour startups avec itérations agiles et mise en production.',
-    icon: <Rocket className="h-5 w-5" />,
-    className: 'md:col-span-2',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Vercel'],
-    image: '/images/projects/mvp.png',
-    color: 'from-rose-500/20 to-red-500/20',
+      'Pour les passionnés de VR : une app mobile pour piloter vos base stations HTC/Valve (allumer, éteindre, vérifier le statut) sans passer par SteamVR.',
+    icon: <Glasses className='h-5 w-5' />,
+    className: 'md:col-span-1',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'Tamagui'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Zaphkiel-Ivanovna/lighthouse-guard',
+        icon: <Github className='h-3.5 w-3.5' />,
+      },
+    ],
+  },
+  {
+    title: 'zkillu.fr',
+    description:
+      'Site vitrine réalisé pour un client, avec un design sur-mesure et une expérience utilisateur soignée.',
+    icon: <Monitor className='h-5 w-5' />,
+    className: 'md:col-span-1',
+    technologies: ['Web', 'Design'],
+    links: [
+      {
+        label: 'Site',
+        href: 'https://zkillu.fr/fr',
+        icon: <ExternalLink className='h-3.5 w-3.5' />,
+      },
+    ],
   },
 ];
 
-const ProjectHeader = ({
-  icon,
-  technologies,
-  color,
-}: {
-  icon: React.ReactNode;
-  technologies: string[];
-  color: string;
-}) => (
-  <div
-    className={`flex h-full min-h-[8rem] w-full flex-col justify-between rounded-xl bg-gradient-to-br ${color} p-4`}
-  >
-    <div className="flex items-center justify-between">
-      <div className="rounded-lg bg-[var(--color-background)]/50 p-2 backdrop-blur-sm">{icon}</div>
-    </div>
-    <div className="flex flex-wrap gap-2">
-      {technologies.slice(0, 3).map((tech) => (
-        <span
-          key={tech}
-          className="rounded-full bg-[var(--color-background)]/50 px-2 py-1 text-xs font-medium text-[var(--color-foreground)] backdrop-blur-sm"
-        >
-          {tech}
-        </span>
-      ))}
-      {technologies.length > 3 && (
-        <span className="rounded-full bg-[var(--color-background)]/50 px-2 py-1 text-xs font-medium text-[var(--color-muted)] backdrop-blur-sm">
-          +{technologies.length - 3}
-        </span>
-      )}
-    </div>
-  </div>
-);
-
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 px-4">
-      <div className="absolute inset-0 grid-pattern opacity-50" />
+    <section id='projects' className='relative py-24 px-4'>
+      <div className='absolute inset-0 grid-pattern opacity-50' />
 
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className='relative z-10 mx-auto max-w-6xl'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className='mb-16 text-center'
         >
-          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
-            Mes <span className="gradient-text">Projets</span>
+          <h2 className='mb-4 text-3xl font-bold sm:text-4xl'>
+            Mes <span className='gradient-text'>Projets</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-[var(--color-muted)]">
-            Une sélection de projets réalisés, des applications web aux solutions mobiles en passant
-            par les APIs.
+          <p className='mx-auto max-w-2xl text-[var(--color-muted)]'>
+            Des outils que j'utilise au quotidien, des apps open source et des
+            sites réalisés pour mes clients.
           </p>
         </motion.div>
 
-        <BentoGrid className="mx-auto">
+        <BentoGrid className='mx-auto'>
           {projects.map((project) => (
             <BentoGridItem
               key={project.title}
               title={project.title}
               description={project.description}
-              header={
-                <ProjectHeader
-                  icon={project.icon}
-                  technologies={project.technologies}
-                  color={project.color}
-                />
-              }
               icon={project.icon}
+              technologies={project.technologies}
+              links={project.links}
               className={project.className}
             />
           ))}
@@ -146,17 +167,17 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 text-center"
+          className='mt-16 text-center'
         >
-          <p className="mb-6 text-[var(--color-muted)]">
+          <p className='mb-6 text-[var(--color-muted)]'>
             Vous avez un projet en tête ? Discutons-en !
           </p>
           <a
-            href="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-8 py-4 font-medium text-white transition-all hover:bg-[var(--color-primary)]/90 hover:shadow-lg hover:shadow-[var(--color-primary)]/25"
+            href='/contact'
+            className='group inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-8 py-4 font-medium text-white transition-all hover:bg-[var(--color-primary)]/90 hover:shadow-lg hover:shadow-[var(--color-primary)]/25'
           >
             Démarrer un projet
-            <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ExternalLink className='h-4 w-4 transition-transform group-hover:translate-x-1' />
           </a>
         </motion.div>
       </div>
