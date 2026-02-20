@@ -26,7 +26,7 @@ export const FloatingNav = ({
 
   return (
     <motion.nav
-      aria-label="Navigation principale"
+      aria-label='Navigation principale'
       initial={{
         opacity: 0,
         y: -20,
@@ -51,27 +51,33 @@ export const FloatingNav = ({
       }}
     >
       <a
-        href="/"
-        className="mr-4 flex items-center transition-opacity hover:opacity-80"
-        aria-label="Accueil"
+        href='/'
+        className='mr-4 flex items-center transition-opacity hover:opacity-80'
+        aria-label='Accueil'
       >
-        <img src="/images/logo.svg" alt="DBRNET Logo" className="h-8 w-auto" width="32" height="32" />
+        <img
+          src='/images/logo.svg'
+          alt='DBRNET Logo'
+          className='h-8 w-auto'
+          width='32'
+          height='32'
+        />
       </a>
       {navItems.map((navItem) => (
         <a
           key={navItem.name}
           href={navItem.link}
           className={cn(
-            'relative flex items-center space-x-1 text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-foreground)]',
+            'relative flex items-center space-x-1 py-2 text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-foreground)]',
           )}
         >
-          <span className="hidden sm:block">{navItem.icon}</span>
+          <span className='hidden sm:block'>{navItem.icon}</span>
           <span>{navItem.name}</span>
         </a>
       ))}
       <a
-        href="/contact"
-        className="relative rounded-full border border-[var(--color-primary)]/50 bg-[var(--color-primary)]/10 px-4 py-2 text-sm font-medium text-[var(--color-primary)] transition-all hover:bg-[var(--color-primary)]/20 hover:shadow-lg hover:shadow-[var(--color-primary)]/20"
+        href='/contact'
+        className='relative rounded-full border border-[var(--color-primary)]/50 bg-[var(--color-primary)]/10 px-5 py-2.5 text-sm font-medium text-[var(--color-primary)] transition-all hover:bg-[var(--color-primary)]/20 hover:shadow-lg hover:shadow-[var(--color-primary)]/20'
       >
         Contact
       </a>

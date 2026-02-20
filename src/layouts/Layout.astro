@@ -12,110 +12,265 @@ const {
   title,
   description,
   canonical = siteUrl,
-  ogImage = `${siteUrl}/images/og-image.png`,
+  // ogImage = `${siteUrl}/images/og-image.png`,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang='fr' class='scroll-smooth'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
     <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="author" content="Damien Dubernet" />
-    <meta name="robots" content="index, follow" />
+    <meta name='description' content={description} />
+    <meta name='author' content='Damien Dubernet' />
+    <meta name='robots' content='index, follow' />
 
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="fr" href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <link rel='canonical' href={canonical} />
+    <link rel='alternate' hreflang='fr' href={canonical} />
+    <link rel='alternate' hreflang='x-default' href={canonical} />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Damien Dubernet - Développeur Full Stack TypeScript, React & NestJS" />
-    <meta property="og:site_name" content="Damien Dubernet - Développeur Full Stack" />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={canonical} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <!-- <meta property='og:image' content={ogImage} /> -->
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='630' />
+    <meta
+      property='og:image:alt'
+      content='Damien Dubernet - Développeur Full Stack TypeScript, React & NestJS'
+    />
+    <meta
+      property='og:site_name'
+      content='Damien Dubernet - Développeur Full Stack'
+    />
+    <meta property='og:locale' content='fr_FR' />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={canonical} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:url' content={canonical} />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <!-- <meta name='twitter:image' content={ogImage} /> -->
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+    <link rel='manifest' href='/site.webmanifest' />
 
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    <meta name='theme-color' content='#0a0a0a' />
+    <meta name='msapplication-TileColor' content='#0a0a0a' />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link rel='preconnect' href='https://cdn.jsdelivr.net' crossorigin />
+    <link rel='dns-prefetch' href='https://cdn.jsdelivr.net' />
 
     <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2"
-      as="font"
-      type="font/woff2"
+      rel='preload'
+      href='https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2'
+      as='font'
+      type='font/woff2'
       crossorigin
     />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
+      rel='preload'
+      as='style'
+      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+      onload="this.rel='stylesheet'"
     />
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    </noscript>
 
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Damien Dubernet",
-      "url": siteUrl,
-      "description": "Développeur Full Stack basé au Mans, spécialisé en TypeScript, React, React Native et NestJS.",
-      "image": `${siteUrl}/images/profile-optimized.jpg`,
-      "jobTitle": "Développeur Full Stack",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "DBRNET"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Le Mans",
-        "addressCountry": "FR"
-      },
-      "email": "damien@dbrnet.fr",
-      "sameAs": [
-        import.meta.env.PUBLIC_LINKEDIN_URL,
-        import.meta.env.PUBLIC_GITHUB_URL
-      ],
-      "knowsAbout": ["TypeScript", "React", "React Native", "NestJS", "Node.js", "PostgreSQL", "Docker"]
-    })} />
+    <script
+      type='application/ld+json'
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'WebSite',
+            '@id': `${siteUrl}/#website`,
+            url: siteUrl,
+            name: 'Damien Dubernet - Développeur Full Stack',
+            description:
+              'Portfolio de Damien Dubernet, développeur Full Stack TypeScript, React & NestJS basé au Mans.',
+            inLanguage: 'fr-FR',
+            publisher: { '@id': `${siteUrl}/#organization` },
+          },
+          {
+            '@type': 'ProfilePage',
+            '@id': `${siteUrl}/#profilepage`,
+            url: siteUrl,
+            name: 'Damien Dubernet - Portfolio',
+            dateCreated: '2024-01-01',
+            dateModified: '2026-02-19',
+            isPartOf: { '@id': `${siteUrl}/#website` },
+            mainEntity: { '@id': `${siteUrl}/#person` },
+            breadcrumb: { '@id': `${siteUrl}/#breadcrumb` },
+          },
+          {
+            '@type': 'Person',
+            '@id': `${siteUrl}/#person`,
+            name: 'Damien Dubernet',
+            url: siteUrl,
+            description:
+              'Développeur Full Stack basé au Mans, spécialisé en TypeScript, React, React Native et NestJS.',
+            image: `${siteUrl}/images/profile-optimized.jpg`,
+            jobTitle: 'Développeur Full Stack',
+            worksFor: { '@id': `${siteUrl}/#organization` },
+            nationality: { '@type': 'Country', name: 'France' },
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Le Mans',
+              addressRegion: 'Pays de la Loire',
+              addressCountry: 'FR',
+            },
+            alumniOf: [
+              {
+                '@type': 'EducationalOrganization',
+                name: 'MyDigitalSchool',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Angers',
+                  addressCountry: 'FR',
+                },
+              },
+              {
+                '@type': 'EducationalOrganization',
+                name: "Saint Gab'",
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Saint-Laurent-sur-Sèvre',
+                  addressRegion: 'Vendée',
+                  addressCountry: 'FR',
+                },
+              },
+            ],
+            email: 'damien@dbrnet.fr',
+            sameAs: [
+              import.meta.env.PUBLIC_LINKEDIN_URL,
+              import.meta.env.PUBLIC_GITHUB_URL,
+            ],
+            knowsAbout: [
+              'TypeScript',
+              'React',
+              'React Native',
+              'NestJS',
+              'Node.js',
+              'PostgreSQL',
+              'Docker',
+            ],
+          },
+          {
+            '@type': 'Organization',
+            '@id': `${siteUrl}/#organization`,
+            name: 'DBRNET',
+            url: siteUrl,
+            logo: {
+              '@type': 'ImageObject',
+              url: `${siteUrl}/images/logo.svg`,
+              width: 512,
+              height: 512,
+            },
+            founder: { '@id': `${siteUrl}/#person` },
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Le Mans',
+              addressRegion: 'Pays de la Loire',
+              addressCountry: 'FR',
+            },
+          },
+          {
+            '@type': 'BreadcrumbList',
+            '@id': `${siteUrl}/#breadcrumb`,
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Accueil',
+                item: siteUrl,
+              },
+            ],
+          },
+          {
+            '@type': 'ItemList',
+            '@id': `${siteUrl}/#projects`,
+            name: 'Projets',
+            description:
+              'Projets open source et réalisations de Damien Dubernet',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'ADB Studio',
+                item: 'https://github.com/Zaphkiel-Ivanovna/adb-studio',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Google Auth Extractor',
+                item: 'https://github.com/Zaphkiel-Ivanovna/GoogleAuthExtractor',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'GitComAI',
+                item: 'https://github.com/Zaphkiel-Ivanovna/git-com-ai',
+              },
+              {
+                '@type': 'ListItem',
+                position: 4,
+                name: 'Mon Portfolio',
+                item: 'https://dbrnet.fr',
+              },
+              {
+                '@type': 'ListItem',
+                position: 5,
+                name: 'MediaDL',
+                item: 'https://github.com/Zaphkiel-Ivanovna/mediadl',
+              },
+              {
+                '@type': 'ListItem',
+                position: 6,
+                name: 'Lighthouse Guard',
+                item: 'https://github.com/Zaphkiel-Ivanovna/lighthouse-guard',
+              },
+              {
+                '@type': 'ListItem',
+                position: 7,
+                name: 'zkillu.fr',
+                item: 'https://zkillu.fr/fr',
+              },
+            ],
+          },
+        ],
+      })}
+    />
 
     <style is:global>
-      @import "../styles/global.css";
+      @import '../styles/global.css';
     </style>
 
     <style>
       body {
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
       }
     </style>
   </head>
-  <body class="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)] antialiased">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-[var(--color-primary)] focus:px-4 focus:py-2 focus:text-white focus:outline-none">
+  <body
+    class='min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)] antialiased'
+  >
+    <a
+      href='#main-content'
+      class='sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-[var(--color-primary)] focus:px-4 focus:py-2 focus:text-white focus:outline-none'
+    >
       Aller au contenu principal
     </a>
     <slot />

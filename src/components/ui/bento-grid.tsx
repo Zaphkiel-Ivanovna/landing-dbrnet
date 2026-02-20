@@ -71,7 +71,7 @@ export const BentoGridItem = ({
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1.5 text-xs font-medium text-[var(--color-muted)] transition-all hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-primary)]/10 hover:text-[var(--color-primary)]"
+              className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-2.5 text-xs font-medium text-[var(--color-muted)] transition-all hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-primary)]/10 hover:text-[var(--color-primary)]"
             >
               {link.icon}
               {link.label}

@@ -15,7 +15,7 @@ const experiences = [
       'Collaboration avec les équipes produit et design',
       'Amélioration continue des processus de développement',
     ],
-    logo: '/logos/Belorder.png',
+    logo: '/logos/Belorder.webp',
   },
   {
     title: 'Développeur Web Freelance',
@@ -43,7 +43,7 @@ const experiences = [
       "Contribution à l'architecture technique",
     ],
     technologies: ['React', 'React Native', 'TypeScript', 'NestJS'],
-    logo: '/logos/Helyx.png',
+    logo: '/logos/Helyx.webp',
   },
   {
     title: 'Maintenance de Softphones',
@@ -56,7 +56,7 @@ const experiences = [
       'Documentation des procédures de maintenance',
     ],
     technologies: ['VoIP', 'Téléphonie IP', 'Support technique'],
-    logo: '/logos/Maaf.png',
+    logo: '/logos/Maaf.webp',
   },
 ];
 
@@ -72,7 +72,7 @@ const education = [
       'Apprentissage des méthodologies agiles',
     ],
     technologies: ['JavaScript', 'React', 'Node.js', 'SQL', 'Express'],
-    logo: '/logos/MDS.png',
+    logo: '/logos/MDS.webp',
   },
   {
     title: 'BTS Systèmes Numériques',
@@ -85,7 +85,7 @@ const education = [
       'Programmation et développement logiciel',
     ],
     technologies: ['Linux', 'Windows Server', 'Réseau', 'Python'],
-    logo: '/logos/StGab.png',
+    logo: '/logos/StGab.webp',
   },
   {
     title: 'Bac Pro Systèmes Numériques',
@@ -98,7 +98,7 @@ const education = [
       'Premiers pas en programmation',
     ],
     technologies: ['Hardware', 'Windows', 'Réseau'],
-    logo: '/logos/StGab.png',
+    logo: '/logos/StGab.webp',
   },
 ];
 
