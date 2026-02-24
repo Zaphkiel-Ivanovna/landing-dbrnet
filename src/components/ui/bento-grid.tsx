@@ -45,8 +45,10 @@ export const BentoGridItem = ({
       )}
     >
       <div className="transition duration-200 group-hover/bento:translate-x-2">
-        {icon && <div className="mb-2 text-[var(--color-primary)]">{icon}</div>}
-        <div className="mb-2 font-bold text-[var(--color-foreground)]">{title}</div>
+        <div className="mb-2 flex items-center gap-2">
+          {icon && <div className="text-[var(--color-primary)]">{icon}</div>}
+          <div className="font-bold text-[var(--color-foreground)]">{title}</div>
+        </div>
         <div className="text-sm text-[var(--color-muted)]">{description}</div>
       </div>
 
