@@ -4,6 +4,7 @@ import {
   Code2,
   Download,
   ExternalLink,
+  Fuel,
   Github,
   Glasses,
   Globe,
@@ -14,6 +15,26 @@ import {
 import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
 
 const projects = [
+  {
+    title: 'Via-Plena',
+    description:
+      "Comparateur de prix de carburants en temps réel en France. Trouvez la station la moins chère autour de vous grâce à une carte interactive avec filtres par type de carburant et rayon de recherche.",
+    icon: <Fuel className='h-5 w-5' />,
+    className: 'md:col-span-2',
+    technologies: ['Next.js', 'TypeScript', 'MapLibre GL', 'Zustand'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Zaphkiel-Ivanovna/via-plena',
+        icon: <Github className='h-3.5 w-3.5' />,
+      },
+      {
+        label: 'Site',
+        href: 'https://via-plena.zaphkiel.dev',
+        icon: <ExternalLink className='h-3.5 w-3.5' />,
+      },
+    ],
+  },
   {
     title: 'ADB Studio',
     description:
@@ -34,7 +55,7 @@ const projects = [
     description:
       "Marre de Google Authenticator ? Cet outil extrait vos codes 2FA depuis un QR code d'export et les convertit pour Bitwarden, Authy, 1Password ou KeePass. Tout se passe en local.",
     icon: <ShieldCheck className='h-5 w-5' />,
-    className: 'md:col-span-2',
+    className: 'md:col-span-1',
     technologies: ['Go', 'Protobuf', 'Docker', 'CI/CD'],
     links: [
       {
@@ -64,7 +85,7 @@ const projects = [
     description:
       'Le site que vous visitez en ce moment. Un portfolio moderne avec des animations soignées, pensé pour être rapide et accessible.',
     icon: <Globe className='h-5 w-5' />,
-    className: 'md:col-span-1',
+    className: 'md:col-span-2',
     technologies: ['Astro', 'React', 'TailwindCSS', 'Framer Motion'],
     links: [
       {
@@ -114,7 +135,7 @@ const projects = [
     description:
       'Site vitrine réalisé pour un client, avec un design sur-mesure et une expérience utilisateur soignée.',
     icon: <Monitor className='h-5 w-5' />,
-    className: 'md:col-span-1',
+    className: 'md:col-span-2',
     technologies: ['Web', 'Design'],
     links: [
       {
