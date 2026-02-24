@@ -1,5 +1,6 @@
 ---
 import SpeedInsights from '@vercel/speed-insights/astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -276,6 +277,7 @@ const {
       Aller au contenu principal
     </a>
     <slot />
+    <Analytics />
     <SpeedInsights />
   </body>
 </html>
